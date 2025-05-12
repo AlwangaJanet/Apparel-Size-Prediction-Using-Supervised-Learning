@@ -1,8 +1,42 @@
-# Ignore virtual environment
+# === Python Virtual Environment ===
 janet/
 
-#ignore ipynb checkpoints
+# === Python Cache ===
+__pycache__/
+*.py[cod]
+*.so
+*.pyo
+*.pyd
+*.cpython-*
+
+# === Jupyter Notebook Checkpoints ===
 .ipynb_checkpoints/
 
-#ignore the dataset
-.csv
+# === Dataset ===
+clothing_size_prediction_dataset.csv
+
+# === Flask Specific ===
+instance/
+*.db
+*.sqlite3
+
+# === Logs and Temp Files ===
+*.log
+*.tmp
+*.swp
+
+# === Build/Distribution ===
+build/
+dist/
+*.egg-info/
+
+# === IDE/Editor Settings ===
+.vscode/
+.idea/
+
+# === OS/System Files ===
+.DS_Store
+Thumbs.db
+
+# Ignore only model files, not the folder
+model/*.pkl

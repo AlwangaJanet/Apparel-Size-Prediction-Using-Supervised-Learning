@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Size Predictor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-tshirt"></i>
+                <h2>Size<span>Fit</span></h2>
+            </div>
+            <div class="sidebar-content">
+                <p>Find your perfect fit with our advanced size prediction tool</p>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>95% Accuracy</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>AI-Powered</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Instant Results</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <header>
+                <h1>Size Predictor</h1>
+                <p>Enter your measurements to find your perfect size</p>
+            </header>
+            
+            <div class="form-container">
+                <form id="prediction-form">
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="" disabled selected>Select gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="height_cm">Height (cm)</label>
+                            <input type="number" id="height_cm" name="height_cm" min="100" max="220" step="0.1" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="weight_kg">Weight (kg)</label>
+                            <input type="number" id="weight_kg" name="weight_kg" min="30" max="200" step="0.1" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age" min="10" max="100" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hips_cm">Hips (cm)</label>
+                            <input type="number" id="hips_cm" name="hips_cm" step="0.1" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group measurement-container">
+                        <div class="measurement-label">
+                            <label id="measurement_label" for="measurement_cm">Measurement (cm)</label>
+                            <div class="tooltip">
+                                <i class="fas fa-question-circle"></i>
+                                <span class="tooltiptext" id="measurement_tooltip">Select gender first</span>
+                            </div>
+                        </div>
+                        <input type="number" id="measurement_cm" name="measurement_cm" step="0.1" required>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="submit" id="predict-btn">
+                            <i class="fas fa-search"></i> Predict My Size
+                        </button>
+                        <button type="reset" id="reset-btn">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="result-container" class="hidden">
+                <div class="result-card">
+                    <h2>Your Recommended Size</h2>
+                    <div class="size-result">
+                        <span id="size-value">-</span>
+                    </div>
+                    <p>Based on your measurements, this is your best fit!</p>
+                    <button id="new-prediction-btn">Try Another Prediction</button>
+                </div>
+            </div>
+            
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Calculating your perfect size...</p>
+            </div>
+            
+            <footer>
+                <p>&copy; 2025 SizeFit Predictor | AI-Powered Size Recommendation</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

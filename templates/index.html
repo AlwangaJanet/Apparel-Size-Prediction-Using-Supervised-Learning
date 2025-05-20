@@ -84,6 +84,15 @@
                         </div>
                         <input type="number" id="measurement_cm" name="measurement_cm" step="0.1" required>
                     </div>
+
+                    <div class="form-group">
+                        <label for="fit_preference">Fit Preference</label>
+                        <select id="fit_preference" name="fit_preference">
+                            <option value="standard" selected>Standard Fit</option>
+                            <option value="loose">Looser Fit</option>
+                            <option value="tight">Tighter Fit</option>
+                        </select>
+                    </div>
                     
                     <div class="form-buttons">
                         <button type="submit" id="predict-btn">
@@ -102,7 +111,22 @@
                     <div class="size-result">
                         <span id="size-value">-</span>
                     </div>
-                    <p>Based on your measurements, this is your best fit!</p>
+                    <p id="fit-message">Based on your measurements, this is your best fit!</p>
+                    
+                    <div class="clothing-types">
+                        <h3>Size Guide by Clothing Type</h3>
+                        <div class="clothing-grid" id="clothing-grid">
+                            <!-- Clothing type items will be added here dynamically -->
+                        </div>
+                    </div>
+
+                    <div class="size-chart-container">
+                        <h3>Size Chart</h3>
+                        <div class="size-chart" id="size-chart">
+                            <!-- Size chart will be added here dynamically -->
+                        </div>
+                    </div>
+                    
                     <button id="new-prediction-btn">Try Another Prediction</button>
                 </div>
             </div>

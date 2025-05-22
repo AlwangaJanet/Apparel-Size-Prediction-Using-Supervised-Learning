@@ -37,6 +37,3 @@ dist/
 # === OS/System Files ===
 .DS_Store
 Thumbs.db
-
-# Ignore only model files, not the folder
-model/*.pkl
